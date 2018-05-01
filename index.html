@@ -1,0 +1,31 @@
+<!DOCTYPE >
+<html>
+<head>
+   <title>Profolio</title>
+
+   <link rel="stylesheet" type="text/css" href="css/main.css">
+</head>
+<body>
+  <div>
+    <h1>Background based on time of day</h1>
+    <h4>JavaScript applies a CSS class to change the background image based on the time of day of the user's browser.</h4>
+  </div>
+  <!-- <script type="text/javascript" src="js/weather_change.js"></script> -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script type="text/javascript">
+     $(document).ready(function(){
+      var d = new Date();
+      var n = d.getHours();
+      if (n > 19 || n < 6)
+        // If time is after 7PM or before 6AM, apply night theme to ‘body’
+        document.body.className = "night";
+      else if (n > 16 && n < 19)
+        // If time is between 4PM – 7PM sunset theme to ‘body’
+        document.body.className = "sunset";
+      else
+        // Else use ‘day’ theme
+        document.body.className = "day";
+   });
+  </script>
+</body>
+</html>

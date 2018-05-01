@@ -1,0 +1,30 @@
+/*reset*/ h1,h4 {margin:0;}
+
+/* basic styles */
+h1 { margin-bottom: 10px; }
+div{ 
+  width: 680px;
+  padding: 10px 25px;
+  margin: 50px auto;
+  border-radius: 7px;
+  background: rgba(255, 255, 255, 0.4); 
+  color: #1F1F1F;
+}
+
+/* backgrounds */
+
+
+.day { 
+	background: url('https://static1.squarespace.com/static/56a7ea6d4bf118b72da2ec92/5a975a42652dea1afc72bc88/5a975bd68165f5deb76350f2/1519877989216/Pixel-art-cityANIM3.gif?format=500w') center center repeat; 
+	min-height: 100vh;
+}
+
+.sunset { 
+	background: url('https://faxdoc.deviantart.com/art/Stacking-houses-on-a-windy-day-559807830') center center no-repeat; 
+	min-height: 100vh;
+}
+
+.night { 
+	background: url('https://weheartit.com/entry/304616830') center center no-repeat; 
+	min-height: 100vh;
+}
