@@ -1,30 +1,199 @@
+body
+{
+  margin: 0;
+  padding: 0;
+  
+  /* make it look decent enough */
+  background: white;
+  color: #cdcdcd;
+  font-family: "Avenir Next", "Avenir", sans-serif;
+}
+
+a
+{
+  text-decoration: none;
+  color: #232323;
+  
+  transition: color 0.3s ease;
+}
+
+a:hover
+{
+  color: #DC143C;
+}
+
+#menuToggle
+{
+  display: block;
+  position: relative;
+  top: 50px;
+  left: 50px;
+  
+  z-index: 1;
+  
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+#menuToggle input
+{
+  display: block;
+  width: 40px;
+  height: 32px;
+  position: absolute;
+  top: -7px;
+  left: -5px;
+  
+  cursor: pointer;
+  
+  opacity: 0; /* hide this */
+  z-index: 2; /* and place it over the hamburger */
+  
+  -webkit-touch-callout: none;
+}
+
+/*
+ * Just a quick hamburger
+ */
+#menuToggle span
+{
+  display: block;
+  width: 33px;
+  height: 4px;
+  margin-bottom: 5px;
+  position: relative;
+  
+  background: #DC143C;
+  border-radius: 3px;
+  
+  z-index: 1;
+  
+  transform-origin: 4px 0px;
+  
+  transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+              background 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+              opacity 0.55s ease;
+}
+
+#menuToggle span:first-child
+{
+  transform-origin: 0% 0%;
+}
+
+#menuToggle span:nth-last-child(2)
+{
+  transform-origin: 0% 100%;
+}
+
+/* 
+ * Transform all the slices of hamburger
+ * into a crossmark.
+ */
+#menuToggle input:checked ~ span
+{
+  opacity: 1;
+  transform: rotate(45deg) translate(-2px, -1px);
+  background: #232323;
+}
+
+/*
+ * But let's hide the middle one.
+ */
+#menuToggle input:checked ~ span:nth-last-child(3)
+{
+  opacity: 0;
+  transform: rotate(0deg) scale(0.2, 0.2);
+}
+
+/*
+ * Ohyeah and the last one should go the other direction
+ */
+#menuToggle input:checked ~ span:nth-last-child(2)
+{
+  transform: rotate(-45deg) translate(0, -1px);
+}
+
+/*
+ * Make this absolute positioned
+ * at the top left of the screen
+ */
+#menu
+{
+  position: absolute;
+  width: 200px;
+  margin: -100px 0 0 -50px;
+  padding: 50px;
+  padding-top: 125px;
+  height: 74vh;
+  
+  background: #ededed;
+  list-style-type: none;
+  -webkit-font-smoothing: antialiased;
+  /* to stop flickering of text in safari */
+  
+  transform-origin: 0% 0%;
+  transform: translate(-100%, 0);
+  
+  transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
+}
+
+#menu li
+{
+  padding: 10px 0;
+  font-size: 22px;
+}
+
+/*
+ * And let's slide it in from the left
+ */
+#menuToggle input:checked ~ ul
+{
+  transform: none;
+}
 /*reset*/ h1,h4 {margin:0;}
 
 /* basic styles */
-h1 { margin-bottom: 10px; }
-div{ 
-  width: 680px;
-  padding: 10px 25px;
-  margin: 50px auto;
-  border-radius: 7px;
-  background: rgba(255, 255, 255, 0.4); 
-  color: #1F1F1F;
+h1{ 
+	font-family: 'Alice', serif;
+	text-align: center;
+	width: 70%;
+	margin: 50px auto;
+	border-radius: 7px;
+	background: rgba(255, 255, 255, 0.4); 
+	color: #1F1F1F;
 }
+h4{
+	font-family: 'Sacramento', cursive;
+	font-size: 30px;
+	word-spacing: 5px;
+	text-align: center;
+	width: 70%;
+	margin: 50px auto;
+	border-radius: 7px;
+	background: rgba(255, 255, 255, 0.4); 
+	color: #1F1F1F;
+}
+
+
 
 /* backgrounds */
 
 
 .day { 
 	background: url('https://static1.squarespace.com/static/56a7ea6d4bf118b72da2ec92/5a975a42652dea1afc72bc88/5a975bd68165f5deb76350f2/1519877989216/Pixel-art-cityANIM3.gif?format=500w') center center repeat; 
-	min-height: 100vh;
+	min-height: 80vh;
+	max-width: 96vw;
+
 }
 
 .sunset { 
-	background: url('https://faxdoc.deviantart.com/art/Stacking-houses-on-a-windy-day-559807830') center center no-repeat; 
-	min-height: 100vh;
+	background: url(https://images2.alphacoders.com/678/678618.jpg) center center no-repeat;
+	max-width: 96vw;
+	min-height: 80vh;
 }
 
 .night { 
-	background: url('https://weheartit.com/entry/304616830') center center no-repeat; 
-	min-height: 100vh;
+	background: url('https://images.alphacoders.com/491/491172.jpg') center center repeat; 
+	min-height: 80vh;
+	max-width: 96vw;
 }

@@ -1,0 +1,359 @@
+body
+{
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  
+  /* make it look decent enough */
+  background: #232323;
+  color: #cdcdcd;
+  font-family: "Avenir Next", "Avenir", sans-serif;
+}
+
+a
+{
+  text-decoration: none;
+  color: #232323;
+  
+  transition: color 0.3s ease;
+}
+
+a:hover
+{
+  color: crimson;
+  text-decoration: none;
+}
+
+p {
+  font-size: 20px;
+  line-height: 36px;
+}
+
+nav {
+  position: absolute;
+  display: inline-block;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+#menuToggle
+{
+  display: block;
+  position: relative;
+  top: 50px;
+  left: 50px;
+  
+  z-index: 1;
+  
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+#menuToggle input
+{
+  display: block;
+  width: 40px;
+  height: 32px;
+  position: absolute;
+  top: -7px;
+  left: -5px;
+  
+  cursor: pointer;
+  
+  opacity: 0; /* hide this */
+  z-index: 2; /* and place it over the hamburger */
+  
+  -webkit-touch-callout: none;
+}
+
+/*
+ * Just a quick hamburger
+ */
+#menuToggle span
+{
+  display: block;
+  width: 33px;
+  height: 4px;
+  margin-bottom: 5px;
+  position: relative;
+  
+  background: crimson;
+  border-radius: 3px;
+  
+  z-index: 1;
+  
+  transform-origin: 4px 0px;
+  
+  transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+              background 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+              opacity 0.55s ease;
+}
+
+#menuToggle span:first-child
+{
+  transform-origin: 0% 0%;
+}
+
+#menuToggle span:nth-last-child(2)
+{
+  transform-origin: 0% 100%;
+}
+
+/* 
+ * Transform all the slices of hamburger
+ * into a crossmark.
+ */
+#menuToggle input:checked ~ span
+{
+  opacity: 1;
+  transform: rotate(45deg) translate(-2px, -1px);
+  background: #232323;
+}
+
+/*
+ * But let's hide the middle one.
+ */
+#menuToggle input:checked ~ span:nth-last-child(3)
+{
+  opacity: 0;
+  transform: rotate(0deg) scale(0.2, 0.2);
+}
+
+/*
+ * Ohyeah and the last one should go the other direction
+ */
+#menuToggle input:checked ~ span:nth-last-child(2)
+{
+  transform: rotate(-45deg) translate(0, -1px);
+}
+
+/*
+ * Make this absolute positioned
+ * at the top left of the screen
+ */
+#menu
+{
+  position: fixed;
+  width: 300px;
+  margin: -78px 0 0 -50px;
+  padding: 50px;
+  padding-top: 125px;
+  min-height: 100vh;
+  max-height: 100%;
+  
+  background: #ededed;
+  list-style-type: none;
+  -webkit-font-smoothing: antialiased;
+  /* to stop flickering of text in safari */
+  
+  transform-origin: 0% 0%;
+  transform: translate(-100%, 0);
+  
+  transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
+}
+
+#menu li
+{
+  padding: 10px 0;
+  font-size: 22px;
+}
+
+/*
+ * And let's slide it in from the left
+ */
+#menuToggle input:checked ~ ul
+{
+  transform: none;
+}
+/*background*/
+.about{
+  background: url(../img/bg.jpg) center center no-repeat;
+  min-height: 100vh;
+  background-size: cover;
+}
+.info{
+  background: url(../img/benjamin-hung-340384-unsplash.jpg) center center no-repeat;
+  min-height: 100vh;
+  max-height: 100vh;
+  background-size: cover;
+}
+.contact{
+  background: url(../img/nathan-anderson-151046-unsplash.jpg) center center no-repeat;
+  min-height: 100vh;
+  max-height: 100vh;
+  background-size: cover;
+}
+.slideInRight{
+  font-family: 'Alice', serif;
+}
+.info_header{
+  text-align: center;
+  color: #ab4e68;
+  font-family: 'Alice', serif;
+}
+.col-6 img{
+  width: 95%;
+}
+.row{
+  margin-left: 15%;
+}
+.Archer-Malmo{
+  margin-top: 3%;
+}
+.dog{
+  padding-top: 4%;
+}
+
+/* Circle Avatar Styles */
+
+.circle {
+  line-height: 0;   /* remove line-height */ 
+  display: inline-block;  /* circle wraps image */
+  margin: 5px;
+  border: none;
+  border-radius: 50%; /* relative value */
+  /*box-shadow: 0px 0px 5px rgba(0,0,0,0.4);*/
+  transition: linear 0.25s;
+  width: 100%;
+  text-align: center;
+  margin: 0 auto;
+  padding: 3%;
+}
+.circle img {
+  max-width: 128px;
+  border-radius: 50%; /* relative value for
+           adjustable image size */
+
+}
+.contact-header{
+  text-align: center;
+  color: #ab4e68;
+  font-family: 'Alice', serif;
+}
+/*Social Media Icons*/
+@import url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.css);
+
+.footer-social-icons {
+    width: 350px;
+    display:block;
+    margin: 0 auto;
+}
+.social-icon {
+    color: #fff;
+}
+ul.social-icons {
+    margin-top: 10px;
+}
+.social-icons li {
+    vertical-align: top;
+    display: inline;
+    height: 100px;
+}
+.social-icons a {
+    color: #fff;
+    text-decoration: none;
+}
+.fa-facebook {
+    padding:10px 14px;
+    -o-transition:.5s;
+    -ms-transition:.5s;
+    -moz-transition:.5s;
+    -webkit-transition:.5s;
+    transition: .5s;
+    background-color: #322f30;
+}
+.fa-facebook:hover {
+    background-color: #3d5b99;
+}
+.fa-twitter {
+    padding:10px 14px;
+    -o-transition:.5s;
+    -ms-transition:.5s;
+    -moz-transition:.5s;
+    -webkit-transition:.5s;
+    transition: .5s;
+    background-color: #322f30;
+}
+.fa-twitter:hover {
+    background-color: #00aced;
+}
+.fa-youtube {
+    padding:10px 14px;
+    -o-transition:.5s;
+    -ms-transition:.5s;
+    -moz-transition:.5s;
+    -webkit-transition:.5s;
+    transition: .5s;
+    background-color: #322f30;
+}
+.fa-youtube:hover {
+    background-color: #e64a41;
+}
+.fa-discord {
+    padding:10px 14px;
+    -o-transition:.5s;
+    -ms-transition:.5s;
+    -moz-transition:.5s;
+    -webkit-transition:.5s;
+    transition: .5s;
+    background-color: #322f30;
+}
+.fa-discord:hover {
+    background-color:   #708090;
+}
+.fa-envelope {
+    padding:10px 14px;
+    -o-transition:.5s;
+    -ms-transition:.5s;
+    -moz-transition:.5s;
+    -webkit-transition:.5s;
+    transition: .5s;
+    background-color: #322f30;
+}
+.fa-envelope:hover {
+    background-color: #e25714;
+}
+.fa-steam {
+    padding:10px 14px;
+    -o-transition:.5s;
+    -ms-transition:.5s;
+    -moz-transition:.5s;
+    -webkit-transition:.5s;
+    transition: .5s;
+    background-color: #322f30;
+}
+.fa-steam:hover {
+    background-color: rgb(90,186,205);
+}
+/*Image Hover*/
+.portfolio-item {
+  position: relative;
+  text-align: center;
+  height: 100%;
+  margin-bottom: 30px;
+}
+.portfolio-item a {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+.portfolio-item .text {
+  position: absolute;
+  top: 50%;
+  z-index: 100;
+  font-weight: bold;
+  width: 100%;
+  text-align: center;
+  opacity: 0; 
+  background-color: red;
+  transition: opacity ease .3s
+}
+
+.portfolio-item:hover .text {
+  opacity: 1;
+}
+.portfolio-item:hover img{
+  filter: blur(1px);
+}

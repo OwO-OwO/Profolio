@@ -2,14 +2,45 @@
 <html>
 <head>
    <title>Profolio</title>
-
+    <link href="https://fonts.googleapis.com/css?family=Alice|Sacramento" rel="stylesheet"> 
    <link rel="stylesheet" type="text/css" href="css/main.css">
 </head>
 <body>
-  <div>
-    <h1>Background based on time of day</h1>
-    <h4>JavaScript applies a CSS class to change the background image based on the time of day of the user's browser.</h4>
+   <nav role="navigation">
+  <div id="menuToggle">
+    <!--
+    A fake / hidden checkbox is used as click reciever,
+    so you can use the :checked selector on it.
+    -->
+    <input type="checkbox" />
+    
+    <!--
+    Some spans to act as a hamburger.
+    
+    They are acting like a real hamburger,
+    not that McDonalds stuff.
+    -->
+    <span></span>
+    <span></span>
+    <span></span>
+    
+    <!--
+    Too bad the menu has to be inside of the button
+    but hey, it's pure CSS magic.
+    -->
+    <ul id="menu">
+      <a href="index.html"><li>Home</li></a>
+      <a href="About.html"><li>About</li></a>
+      <a href="Info.html"><li>Info</li></a>
+      <a href="Contact.html"><li>Contact</li></a>
+    </ul>
   </div>
+</nav>
+  <div>
+    <h1>Hello</h1>
+    <h4>Welcome to the Making of a Failure of a Web Designer</h4>
+  </div>
+
   <!-- <script type="text/javascript" src="js/weather_change.js"></script> -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script type="text/javascript">
